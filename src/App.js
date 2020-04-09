@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import AreaList from './components/AreaList';
+import AreaForm from './components/AreaForm';
+import Header from './components/Header';
+import AreaListContext from "./context/AreaListContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <AreaListContext>
+      <div className="container">
+        <div className="app-wrapper">
+          <Header/>
+          <div className="main">
+             <AreaForm/>
+             <AreaList/>
+          </div>  
+        </div>
+      </div>
+      </AreaListContext>
+    </Fragment>
   );
 }
 
